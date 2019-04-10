@@ -1,8 +1,7 @@
 
 @ECHO OFF
 
-REM ; %PROJECT_NAME% is set by Jenkins, this allows us to use the same script to verify
-REM ; Chef and Angry Chef
+REM ; %PROJECT_NAME% is set by omnibus/omnibus-test.ps1
 cd C:\opscode\%PROJECT_NAME%\bin
 
 REM ; We don't want to add the embedded bin dir to the main PATH as this
@@ -76,7 +75,7 @@ REM ; ffi-yajl must run in c-extension mode for perf, so force it so we don't ac
 set FORCE_FFI_YAJL=ext
 
 call %EMBEDDED_BIN_DIR%\bundle install
-call %EMBEDDED_BIN_DIR%\bundle exec rspec -r rspec_junit_formatter -f RspecJunitFormatter -o %WORKSPACE%\test.xml -f documentation spec/functional
+call %EMBEDDED_BIN_DIR%\bundle exec rspec -r rspec_junit_formatter -f RspecJunitFormatter -o test.xml -f documentation spec/functional
 
 GOTO :EOF
 

@@ -25,8 +25,7 @@ mkdir -p $TMPDIR
 # Verify that we kill any orphaned test processes. Kill any orphaned rspec processes.
 ps ax | egrep 'rspec' | grep -v grep | awk '{ print $1 }' | xargs sudo kill -s KILL || true
 
-# $PROJECT_NAME is set by Jenkins, this allows us to use the same script to verify
-# Chef and Angry Chef
+# $PROJECT_NAME is set by omnibus/omnibus-test.sh
 PATH=/opt/$PROJECT_NAME/bin:$PATH
 export PATH
 

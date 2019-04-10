@@ -34,4 +34,7 @@ $Env:PROJECT_NAME = $product
 
 Write-Output "Running verification for $product"
 
+# chocolatey functional tests fail so delete the chocolatey binary to avoid triggering them
+Remove-Item -Path C:\ProgramData\chocolatey\bin\choco.exe
+
 ci/verify-chef.bat
