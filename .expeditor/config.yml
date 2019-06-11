@@ -5,8 +5,7 @@ project:
   alias: chef-15
 
 # The name of the product keys for this product (from mixlib-install)
-product_key:
-  - chef
+product_key: chef
 
 # Slack channel in Chef Software slack to send notifications about build failures, etc
 slack:
@@ -53,7 +52,7 @@ github:
         version_constraint: 14*
 
 changelog:
-  rollup_header: Changes not yet released to rubygems.org
+  rollup_header: Changes not yet released to stable
 
 # These actions are taken, in order they are specified, anytime a Pull Request is merged.
 merge_actions:
